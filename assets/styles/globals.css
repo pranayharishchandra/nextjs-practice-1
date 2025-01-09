@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+main {
+  background-color: aqua;
+  color: black; /* globlas.css will be prioritized over the tailwind */
+}

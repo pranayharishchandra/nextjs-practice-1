@@ -7,9 +7,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      // 1. added font and 
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+      // 2. template
+      gridTemplateColumns: {
+        '70/30': '70% 28%'
       },
     },
   },
