@@ -10,4 +10,5 @@ const addPage = () => {
   )
 }
 
+
 export default addPage
