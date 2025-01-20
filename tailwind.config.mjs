@@ -17,5 +17,28 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  // daisyui: {
+  //   themes: ["light"], // Use the "light" theme
+  //   // themes: ["corporate"], // Use the "light" theme
+  //   // themes: ["dark"], // Use the "light" theme
+  // },
+  daisyui: {
+    themes: [
+      {
+        myCustomTheme: {
+          primary   : "#1E40AF",   // Dark blue
+          secondary : "#64748B",   // Grayish blue
+          accent    : "#2563EB",   // Bright blue
+          neutral   : "#1E293B",   // Very dark blue-gray
+          "base-100": "#FFFFFF",   // White background
+          info      : "#3ABFF8",
+          success   : "#36D399",
+          warning   : "#FBBD23",
+          error     : "#F87272",
+        },
+      },
+    ],
+    base: true, // Include daisyUI base styles
+  },
 };
