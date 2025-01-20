@@ -3,11 +3,12 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="bg-base-100 shadow-md">
+    <nav className="bg-blue-900 text-white shadow-md">
       <div className="navbar container mx-auto">
         {/* Logo */}
         <div className="flex-1">
-          <Link href="/" className="text-xl font-bold text-primary">
+          {/* <Link href="/" className="text-xl font-bold text-primary"> */}
+          <Link href="/" className="text-xl font-bold text-purple-300">
             PranayNext
           </Link>
         </div>
