@@ -1,34 +1,13 @@
-'use client'
+// app/posts/[id]/page.jsx (Server Component)
 
-import { useRouter } from 'next/router'
+export const metadata = {
+  title: 'Dynamic Post',
+  description: 'This is a dynamic post page with the post ID as a route parameter.',
+  keywords: 'dynamic, post, next.js, id',
+};
 
-// const dynamicPostPage = () => {
-//   const router = useRouter()
-//   const id = router.query.id;
-  
-//   return (
-//     <div>
-//       {`hello from dynamic route: /posts/${id}`}
-//     </div>
-//   )
-// }
+import DynamicPostPage from './DynamicPostPage';
 
-// export default dynamicPostPage
-
-import React from 'react'
-// Remove next/router import
-import { useParams } from 'next/navigation' // Add this instead
-
-const DynamicPostPage = () => {  // Capitalize component name (React convention)
-  // Remove router.query usage
-  const params = useParams()
-  const id = params.id
-  
-  return (
-    <div>
-      {`hello from dynamic route: /posts/${id}`}
-    </div>
-  )
+export default function PostPage() {
+  return <DynamicPostPage />;
 }
-
-export default DynamicPostPage
