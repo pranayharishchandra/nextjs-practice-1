@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex-1">
           {/* <Link href="/" className="text-xl font-bold text-primary"> */}
           <Link href="/" className="text-xl font-bold text-purple-300">
-            PranayNext
+          MotorSales
           </Link>
         </div>
 

@@ -21,9 +21,9 @@ import Navbar from '@/components/Navbar';'@/components/Navbar'
 
 ///---
 export const metadata = {
-  title: "PranayNext",
-  description: "A Next.js application",
-  keywords: 'nextjs, app, layout, metadata',
+  title: "MotorSales",
+  description: "Best Website for Motor Sales",
+  keywords: 'car, bike, sale, price',
 };
 
 export default function RootLayout({ children }) {

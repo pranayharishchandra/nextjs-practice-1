@@ -8,6 +8,7 @@ export default function Home() {
   const [filteredVehicles, setFilteredVehicles] = useState([]);
   const [filters, setFilters] = useState({ price: "", type: "" });
 
+  //TODO: fetch from MongoDB
   useEffect(() => {
     // Fetch the vehicle data
     fetch("/vehicles.json")
@@ -42,7 +43,8 @@ export default function Home() {
       {/* Hero Section */}
       <Hero vehicles={vehicles} />
 
-      {/* Filters */}
+      {/* Filters, 
+      //TODO: filters as diffrent component imported here */}
       <div className="flex flex-wrap items-center gap-4 my-8">
         <select
           className="select select-bordered"
