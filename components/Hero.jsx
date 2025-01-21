@@ -32,10 +32,10 @@ export default function Hero({ vehicles }) {
             <p>${vehicle.price}</p>
           </div>
           <div className="absolute flex justify-between w-full bottom-2">
-            <a href={`#slide${(index - 1 + 5) % 5}`} className="btn btn-circle">
+            <a href={`#slide${(index - 1 + 5) % 5}`} className="btn btn-circle backdrop-blur-lg bg-black bg-opacity-40 text-white">
               ❮
             </a>
-            <a href={`#slide${(index + 1) % 5}`} className="btn btn-circle">
+            <a href={`#slide${(index + 1) % 5}`} className="btn btn-circle backdrop-blur-lg bg-black bg-opacity-40 text-white">
               ❯
             </a>
           </div>

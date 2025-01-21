@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        <main className="container mx-auto p-4">{children}</main>
+        <main className="container mx-auto p-4 pt-[5rem]">{children}</main>
       </body>
     </html>
   );

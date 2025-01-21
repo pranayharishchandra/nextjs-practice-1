@@ -1,4 +1,6 @@
 "use client";
+//TODO: profile/login 
+//TODO: Update for both : Mobile and desktop view
 import { useState } from "react";
 import Link from "next/link";
 
@@ -6,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-900 text-white shadow-md fixed top-0 left-0 w-full z-50">
+    <nav className="bg-blue-900/70 text-white shadow-md fixed top-0 left-0 w-full z-50 backdrop-blur-lg">
       <div className="navbar container mx-auto">
         {/* Logo */}
         <div className="flex-1">
@@ -51,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-14 left-0 w-full z-10 shadow-lg flex flex-col space-y-2 p-4 md:hidden bg-blue-900">
+          <div className="absolute top-14 left-0 w-full z-10 shadow-lg flex flex-col space-y-2 p-4 md:hidden bg-blue-900/70 backdrop-blur-lg">
             <Link href="/" className="btn btn-ghost">
               Home
             </Link>
