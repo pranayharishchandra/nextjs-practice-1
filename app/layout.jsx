@@ -1,6 +1,6 @@
 import '@/assets/styles/globals.css';
 // import '@/components/Navbar.jsx'
-import Navbar from '@/components/Navbar';'@/components/Navbar'
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: "Motor24",

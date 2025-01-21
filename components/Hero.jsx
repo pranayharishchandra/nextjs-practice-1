@@ -6,35 +6,36 @@ export default function Hero({ vehicles }) {
   const [featuredVehicles, setFeaturedVehicles] = useState([]);
 
   useEffect(() => {
-    // Shuffle (random) and pick 5 vehicles for the carousel
-    const shuffled = [...vehicles].sort(() => 0.5 - Math.random()); // shuffle
-    setFeaturedVehicles(shuffled.slice(0, 5)); // pick 1st 5
+    // Shuffle and pick 5 vehicles for the carousel
+    const shuffled = [...vehicles].sort(() => 0.5 - Math.random());
+    setFeaturedVehicles(shuffled.slice(0, 5));
   }, [vehicles]);
 
   return (
-    <div className = "carousel w-full">
+    <div className="carousel w-full max-h-[400px] overflow-hidden">
       {featuredVehicles.map((vehicle, index) => (
         <div
-          key       = {vehicle._id}
-          id        = {`slide${index}`}
-          className = "carousel-item relative w-full"
+          key={vehicle._id}
+          id={`slide${index}`}
+          className="carousel-item relative w-full"
         >
           <Image
-            src       = {vehicle.image}
-            alt       = {vehicle.name}
-            width     = {800}
-            height    = {200}
-            className = "w-full object-cover"
+            src={vehicle.image}
+            alt={vehicle.name}
+            width={1200}
+            height={400}
+            className="w-full h-[350px] object-cover"
+            priority
           />
-          <div className = "absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-4 rounded">
-          <h2  className = "text-xl font-bold">{vehicle.name}</h2>
+          <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-4 rounded">
+            <h2 className="text-xl font-bold">{vehicle.name}</h2>
             <p>${vehicle.price}</p>
           </div>
-          <div className = "absolute flex justify-between w-full bottom-2">
-          <a   href      = {`#slide${(index - 1 + 5) % 5}`} className = "btn btn-circle">
+          <div className="absolute flex justify-between w-full bottom-2">
+            <a href={`#slide${(index - 1 + 5) % 5}`} className="btn btn-circle">
               ❮
             </a>
-            <a href = {`#slide${(index + 1) % 5}`} className = "btn btn-circle">
+            <a href={`#slide${(index + 1) % 5}`} className="btn btn-circle">
               ❯
             </a>
           </div>

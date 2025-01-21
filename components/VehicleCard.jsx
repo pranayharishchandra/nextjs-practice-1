@@ -10,7 +10,7 @@ export default function VehicleCard({ vehicle }) {
           alt={vehicle.name}
           width={300}
           height={200}
-          className="object-cover"
+          className="w-full h-[200px] object-cover"
         />
       </figure>
       <div className="card-body">
