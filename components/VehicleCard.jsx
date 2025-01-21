@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function VehicleCard({ vehicle }) {
   return (
@@ -17,6 +18,17 @@ export default function VehicleCard({ vehicle }) {
         <p>Type: {vehicle.type}</p>
         <p>Price: ${vehicle.price}</p>
         <p>Stock: {vehicle.stock} available</p>
+        <div className="card-actions mt-4">
+          {/* Button to view vehicle details */}
+          <Link href={`/vehicle/${vehicle._id}`} passHref>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
+
+          {/* Placeholder for Buy Vehicle button */}
+          <button className="btn btn-secondary" disabled>
+            Buy Vehicle
+          </button>
+        </div>
       </div>
     </div>
   );

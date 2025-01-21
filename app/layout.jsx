@@ -2,26 +2,14 @@ import '@/assets/styles/globals.css';
 // import '@/components/Navbar.jsx'
 import Navbar from '@/components/Navbar';'@/components/Navbar'
 
-// export const metadata = {
-//   title: 'Default Title',
-//   description: 'This is a default description for the whole app.',
-//   keywords: 'nextjs, app, layout, metadata',
-// };
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";  // <-- Import the Bootstrap JS bundle
 
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en">
 
-//       <body className="text-red-700">
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }
 
-///---
+
 export const metadata = {
-  title: "MotorSales",
+  title: "Motor24",
   description: "Best Website for Motor Sales",
   keywords: 'car, bike, sale, price',
 };

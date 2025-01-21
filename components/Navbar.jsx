@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex-1">
           {/* <Link href="/" className="text-xl font-bold text-primary"> */}
           <Link href="/" className="text-xl font-bold text-purple-300">
-          MotorSales
+          Motor24
           </Link>
         </div>
 
@@ -22,6 +22,7 @@ export default function Navbar() {
           <Link href="/posts/all" className="btn btn-ghost text-base">
             Posts
           </Link>
+          {/* //TODO: only show Profile when loggedIn, else show Login button */}
           <Link href="/profile" className="btn btn-ghost text-base">
             Profile
           </Link>
