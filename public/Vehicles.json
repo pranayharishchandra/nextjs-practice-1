@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Honda Civic",
+    "type": "car",
+    "price": 20000,
+    "stock": 5,
+    "image": "/images/honda-civic.webp"
+  },
+  {
+    "id": 2,
+    "name": "Yamaha R15",
+    "type": "bike",
+    "price": 1500,
+    "stock": 10,
+    "image": "/images/yamaha-r15.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Ford Mustang",
+    "type": "car",
+    "price": 45000,
+    "stock": 2,
+    "image": "/images/ford-mustang.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Ducati Panigale",
+    "type": "bike",
+    "price": 20000,
+    "stock": 3,
+    "image": "/images/ducati-panigale.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Toyota Corolla",
+    "type": "car",
+    "price": 18000,
+    "stock": 8,
+    "image": "/images/toyota-corolla.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Suzuki Hayabusa",
+    "type": "bike",
+    "price": 14000,
+    "stock": 4,
+    "image": "/images/suzuki-hayabusa.jpg"
+  }
+]
