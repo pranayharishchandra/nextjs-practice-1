@@ -1,10 +1,8 @@
 "use client";
-//TODO: profile/login 
-//TODO: Update for both : Mobile and desktop view
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function Navbar({ isLoggedIn }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -22,12 +20,18 @@ export default function Navbar() {
           <Link href="/" className="btn btn-ghost text-base">
             Home
           </Link>
-          <Link href="/posts/all" className="btn btn-ghost text-base">
-            Posts
+          <Link href="/vehicles" className="btn btn-ghost text-base">
+            All Vehicles
           </Link>
-          <Link href="/profile" className="btn btn-ghost text-base">
-            Profile
-          </Link>
+          {isLoggedIn ? (
+            <Link href="/profile" className="btn btn-ghost text-base">
+              Profile
+            </Link>
+          ) : (
+            <Link href="/login" className="btn btn-ghost text-base">
+              Login
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -57,12 +61,18 @@ export default function Navbar() {
             <Link href="/" className="btn btn-ghost">
               Home
             </Link>
-            <Link href="/notifications" className="btn btn-ghost">
-              Notifications
+            <Link href="/vehicles" className="btn btn-ghost">
+              All Vehicles
             </Link>
-            <Link href="/profile" className="btn btn-ghost">
-              Profile
-            </Link>
+            {isLoggedIn ? (
+              <Link href="/profile" className="btn btn-ghost">
+                Profile
+              </Link>
+            ) : (
+              <Link href="/login" className="btn btn-ghost">
+                Login
+              </Link>
+            )}
           </div>
         )}
       </div>

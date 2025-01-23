@@ -1,4 +1,5 @@
-import '@/assets/styles/globals.css';
+// import '@/assets/styles/globals.css';
+import './globals.css'
 // import '@/components/Navbar.jsx'
 import Navbar from '@/components/Navbar';
 

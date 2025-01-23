@@ -20,7 +20,8 @@ export default function VehicleCard({ vehicle }) {
         <p>Stock: {vehicle.stock} available</p>
         <div className="card-actions mt-4">
           {/* Button to view vehicle details */}
-          <Link href={`/vehicle/${vehicle._id}`} passHref>
+          {/* <Link href={`/vehicle/${vehicle._id}`} passHref> */}
+          <Link href={`/vehicles/${vehicle.slug}`} passHref>
             <button className="btn btn-primary">View Details</button>
           </Link>
 
