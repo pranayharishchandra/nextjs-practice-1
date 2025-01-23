@@ -9,10 +9,13 @@ export default async function FeaturedVehicles() {
   const vehicles = await Vehicle.aggregate([{ $sample: { size: 3 } }]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-      {vehicles.map((vehicle) => (
-        <VehicleCard key={vehicle._id} vehicle={vehicle} />
-      ))}
-    </div>
+    <>
+      <h1>Random 3 Featured Vehicles</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+        {vehicles.map((vehicle) => (
+          <VehicleCard key={vehicle._id} vehicle={vehicle} />
+        ))}
+      </div>
+    </>
   );
 }

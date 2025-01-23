@@ -1,4 +1,6 @@
 "use client";
+//! not using this Hero section - i can also delete it  - it's useless
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
