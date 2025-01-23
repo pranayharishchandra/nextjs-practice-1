@@ -4,7 +4,8 @@ import Vehicle from "@/models/Vehicle";
 export default async function VehicleDetail({ params }) {
 
   // return <div>hello paaji</div>
-  const { slug } = params;
+  // const { slug } = params;
+  const { slug } = await params;
 
   // Connect to the database
   await connectDB();
