@@ -1,3 +1,6 @@
+//! Don't make "DB" and "collections" from compass, 
+//! you create them from here, and then using compass import data
+
 import mongoose from 'mongoose';
 
 const VehicleSchema = new mongoose.Schema({
@@ -18,3 +21,5 @@ const VehicleSchema = new mongoose.Schema({
 const Vehicle = mongoose.models.Vehicle || mongoose.model('Vehicle', VehicleSchema);
 
 export default Vehicle;
+
+

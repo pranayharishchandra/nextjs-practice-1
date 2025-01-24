@@ -7,7 +7,7 @@ const connectDB = async () => {
 
   // Check Mongoose connection state
   if (mongoose.connection.readyState === 1) {
-    console.log("MongoDB is already connected...");
+    console.log("MongoDB is already connected 😍😍😍😍😍😍😍😍😍😍");
   } else {
     try {
       // Connect to MongoDB
@@ -16,7 +16,7 @@ const connectDB = async () => {
         socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
       });
 
-      console.log("MongoDB connected...");
+      console.log("MongoDB connected 😍😍😍😍😍😍😍😍😍😍");
     } catch (error) {
       console.error("Error connecting to MongoDB:", error.message);
       process.exit(1); // Exit process with failure code

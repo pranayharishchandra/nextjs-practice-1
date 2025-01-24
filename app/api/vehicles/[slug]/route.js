@@ -1,23 +1,39 @@
 //! API for `/api/vehicles/:slug`
 
-import dbConnect from '@/config/dbConnect';
-import Vehicle from '@/models/Vehicle';
+import connectDB from "@/config/database";
+import Vehicle from "@/models/Vehicle";
 
-export default async function VehiclePage({ params }) {
-  await dbConnect();
+export async function GET(req, { params }) {
+  // Destructure `slug` from `params`
+  const { slug } = await params;
 
-  const vehicle = await Vehicle.findById(params.slug);
-  if (!vehicle) {
-    return <h1>Vehicle not found</h1>;
+  // Connect to the database
+  try {
+    await connectDB();
+
+    // Find the vehicle by slug
+    const vehicle = await Vehicle.findOne({ slug }).lean();
+
+    if (!vehicle) {
+      return new Response(JSON.stringify({ error: "Vehicle not found" }), {
+        status: 404,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    // Return the vehicle data
+    return new Response(JSON.stringify(vehicle), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.error("Error fetching vehicle:", error);
+    return new Response(
+      JSON.stringify({ error: "Internal Server Error" }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
-
-  return (
-    <div>
-      <h1>{vehicle.name}</h1>
-      <p>Type: {vehicle.type}</p>
-      <p>Price: ${vehicle.price}</p>
-      <p>Stock: {vehicle.stock}</p>
-      <img src={vehicle.image} alt={vehicle.name} />
-    </div>
-  );
 }
