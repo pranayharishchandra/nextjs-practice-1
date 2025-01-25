@@ -4,17 +4,16 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+
 export default function ProfilePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // Redirect to login page if not logged in
   if (status === "unauthenticated") {
     router.push("/login");
     return null;
   }
 
-  // Loading state
   if (status === "loading") {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -39,6 +38,11 @@ export default function ProfilePage() {
               Welcome, {session.user.name}!
             </h1>
             <p className="text-sm text-gray-600">{session.user.email}</p>
+            <p className="text-sm text-gray-600">Role: {session.user.role}</p>
+            <p className="text-sm text-gray-600">Bio: {session.user.bio}</p>
+            <p className="text-sm text-gray-600">
+              Location: {session.user.location}
+            </p>
           </div>
         </div>
         <button
