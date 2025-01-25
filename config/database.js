@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Vehicle from "@/models/Vehicle";
+// import Vehicle from "@/models/Vehicle";
 
 const connectDB = async () => {
   // `strictQuery` ensures no new fields other than defined in the model are allowed

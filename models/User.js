@@ -3,13 +3,19 @@ import mongoose from 'mongoose';
 // Define the schema for User
 const userSchema = new mongoose.Schema(
   {
-    googleId: {
+    githubId: {
       type: String,
       required: true,
-      unique: true, // Unique Google ID
+      unique: true, // Unique GitHub ID
+    },
+    username: {
+      type: String,
+      required: true,
+      unique: true, // GitHub username, unique across the platform
+      trim: true,
     },
     name: {
-      type: String,
+      type: String, // Full name of the user
       required: true,
     },
     email: {
@@ -20,7 +26,15 @@ const userSchema = new mongoose.Schema(
       trim: true,
     },
     profileImage: {
-      type: String, // Google profile image URL
+      type: String, // GitHub profile image URL
+      default: '',
+    },
+    bio: {
+      type: String, // Bio from GitHub profile
+      default: '',
+    },
+    location: {
+      type: String, // Location from GitHub profile
       default: '',
     },
     role: {
@@ -41,7 +55,7 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // To automatically add createdAt and updatedAt
+    timestamps: true, // Automatically adds createdAt and updatedAt fields
   }
 );
 
@@ -66,7 +80,7 @@ userSchema.methods.removeVehicleForSale = async function (vehicleId) {
 };
 
 // Model creation
-const User = mongoose.model('User', userSchema);
+const User = mongoose.models.Vehicle || mongoose.model('User', userSchema);
 export default User;
 
 /* Example Usage:
@@ -78,17 +92,17 @@ const user = await User.findById(userId); // Find the seller user by their ID
 if (user.role === 'seller') {
   await user.addVehicleForSale(vehicleId); // Add vehicle to the seller's list
 }
-Removing a Vehicle from Sale (Seller Only):
 
+Removing a Vehicle from Sale (Seller Only):
 
 > //? Example: Removing a vehicle from the seller's list of vehicles for sale
 const user = await User.findById(userId); // Find the seller user by their ID
 if (user.role === 'seller') {
   await user.removeVehicleForSale(vehicleId); // Remove vehicle from the seller's list
 }
+
 Fetching Seller's Vehicles:
 When fetching a seller's data, you can populate the vehiclesForSale field to get the full details of the vehicles they are selling:
-
 
 > //? Fetch seller with full vehicle details
 const seller = await User.findById(userId)
