@@ -23,6 +23,10 @@ import { NextResponse } from "next/server";
 import connectDB from "@/config/database";
 import Vehicle from "@/models/Vehicle";
 
+//! export async function GET(request, { searchParams }) { // this don't work like "params" because
+//* "params" should work for dynamic segments (e.g., /posts/:slug). 
+//* However, "query parameters" (i.e., parameters after the ? in the URL) are handled a little differently. 
+
 export async function GET(request) {
   await connectDB();
 

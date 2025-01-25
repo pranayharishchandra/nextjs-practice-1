@@ -1,7 +1,7 @@
 //! API for `/api/vehicles/:slug`
 
 import connectDB from "@/config/database";
-import Vehicle from "@/models/Vehicle";
+import Vehicle   from "@/models/Vehicle";
 
 export async function GET(req, { params }) {
   // Destructure `slug` from `params`
