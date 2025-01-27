@@ -11,10 +11,10 @@ export default function LoginPage() {
           {/* Title */}
           <h2 className="text-2xl font-bold text-center text-primary">Login</h2>
           <p className="text-center text-sm text-gray-500">
-            Welcome! Please login to your GitHub account.
+            Welcome! Please login to your account using GitHub or Google.
           </p>
 
-          {/* Login Button */}
+          {/* Login Buttons */}
           <div className="form-control w-full max-w-xs mx-auto">
             <button
               className="btn btn-primary w-full mb-2"
@@ -22,9 +22,16 @@ export default function LoginPage() {
             >
               Login with GitHub
             </button>
+            <button
+              className="btn btn-secondary w-full"
+              onClick={() => signIn("google", { callbackUrl: "/" })}
+            >
+              Login with Google
+            </button>
           </div>
 
           {/* Signup Link */}
+          {/* Uncomment if you plan to have a registration flow */}
           {/* <p className="text-sm text-gray-500 text-center mt-4">
             Don&apos;t have an account?{" "}
             <a href="/register" className="text-primary hover:underline">
@@ -37,9 +44,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-
-
-// export default function LoginPage() {
-//   return <div>Login krlo fraands</div>
-// }

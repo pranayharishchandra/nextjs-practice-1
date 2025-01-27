@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 // import Vehicle from "@/models/Vehicle";
 
+//! it's good to use dotenv, when i was using scripts, without dotenv, they weren't working
+import dotenv from 'dotenv';
+dotenv.config();
+
 const connectDB = async () => {
   // `strictQuery` ensures no new fields other than defined in the model are allowed
   mongoose.set("strictQuery", true);

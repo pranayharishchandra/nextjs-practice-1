@@ -5,13 +5,18 @@ const userSchema = new mongoose.Schema(
   {
     githubId: {
       type: String,
-      required: true,
       unique: true, // Unique GitHub ID
+      sparse: true, // Allow null for non-GitHub users
+    },
+    googleId: {
+      type: String,
+      unique: true, // Unique Google ID
+      sparse: true, // Allow null for non-Google users
     },
     username: {
       type: String,
-      required: true,
       unique: true, // GitHub username, unique across the platform
+      sparse: true, // Allow null for non-GitHub users
       trim: true,
     },
     name: {
@@ -26,15 +31,15 @@ const userSchema = new mongoose.Schema(
       trim: true,
     },
     profileImage: {
-      type: String, // GitHub profile image URL
+      type: String, // Profile image URL
       default: '',
     },
     bio: {
-      type: String, // Bio from GitHub profile
+      type: String, // Bio
       default: '',
     },
     location: {
-      type: String, // Location from GitHub profile
+      type: String, // Location
       default: '',
     },
     role: {
@@ -42,7 +47,6 @@ const userSchema = new mongoose.Schema(
       enum: ['user', 'seller'],
       default: 'user', // Default to 'user', can be changed to 'seller'
     },
-    // If the user is a seller, this field will hold the vehicles they're selling
     vehiclesForSale: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -58,6 +62,7 @@ const userSchema = new mongoose.Schema(
     timestamps: true, // Automatically adds createdAt and updatedAt fields
   }
 );
+
 
 // Optionally, you can add methods to add/remove vehicles from the seller's list
 userSchema.methods.addVehicleForSale = async function (vehicleId) {
